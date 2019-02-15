@@ -1,0 +1,68 @@
+TOPIC
+    about_OpsMgr_RunAsAccount
+
+SHORT DESCRIPTION
+    Describes how to create and associate a new Run As account.
+
+
+LONG DESCRIPTION
+    A Run As account is a named set of credentials that is presented by a Run 
+    As profile for authentication when monitors, rules, or tasks are run. A 
+    Run As account may be used by one or more Run As profiles.
+
+    You can get existing Run As accounts by using the Get-SCOMRunAsAccount
+    cmdlet.  To create a Run As account, use the Add-SCOMRunAsAccount cmdlet.
+    You can manage the secure distribution of Run As accounts by using the 
+    Get-SCOMRunAsDistribution and Set-SCOMRunAsDistribution cmdlets.
+    
+    There are many types of Run As accounts, each of which uses a unique
+    set of parameters to create.  For examples of how to create each type
+    of Run As account, type: "Get-Help Add-SCOMRunAsAccount -examples".
+
+
+  EXAMPLES
+
+    The following example script creates a Windows Run As account object, and
+    sets it for approved secure distribution to all Agents and Management Servers.
+
+        # Get credentials for the Run As account. The user name should be 
+        # entered in the format "domain\user".
+        $Creds = Get-Credential
+
+        # Create the Run As account object.
+        $RunAsAccount = Add-SCOMRunAsAccount -Windows `
+                                             -Name "My New Run As Account" `
+                                             -RunAsCredential $creds
+
+
+        # Creates an array consisting of all Agent and Management Server objects
+        # present in the Management Group.
+        $distribution = ( Get-SCOMAgent ) +
+                        ( Get-SCOMManagementServer )
+                        
+        # Approves the new account for secure distribution to all Agents
+        # and Management Servers.
+        Set-SCOMRunAsDistribution -RunAsAccount $runAsAccount `
+                                  -MoreSecure `
+                                  -SecureDistribution $distribution
+
+    After you have created your Run As account, you must associate the 
+    Run As account with a Run As profile to use the account. The following 
+    commands get the Run As profile with which to associate the Run As
+    account, the Run As account, and the class instance. Then, the last 
+    command uses the Set-SCOMRunAsProfile cmdlet to add the Run As account
+    to the Run As profile.
+    
+        $Profile = Get-SCOMRunAsProfile -DisplayName "My Run As Profile"
+        $Account = Get-SCOMRunAsAccount -Name "My New Run As Account"
+        $Instance = Get-SCOMClassInstance -DisplayName "Contoso financial SQL Servers"
+        Set-SCOMRunAsProfile -Action "Add" -Profile $Profile -Account $Account -Instance $Instance
+
+
+SEE ALSO
+    Add-SCOMRunAsAccount
+    Get-SCOMRunAsAccount
+    Get-SCOMRunAsDistribution
+    Set-SCOMRunAsDistribution
+    Get-SCOMRunAsProfile
+    Set-SCOMRunAsProfile

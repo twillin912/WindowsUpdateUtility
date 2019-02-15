@@ -1,0 +1,210 @@
+TOPIC
+    about_OpsMgr_Cmdlet_Names
+
+SHORT DESCRIPTION
+    Maps the System Center Operations Manager 2007 cmdlets to the 
+    Operations Manager 2012 cmdlets.
+
+
+LONG DESCRIPTION
+    All cmdlets in Operations Manager 2012 have new names, and can be
+    identified by the "SCOM" or "SC" preceding the noun name. In some cases, the 
+    verb associated with the cmdlet has also been updated.
+
+    This topic outlines which cmdlets are new to Operations Manger 2012, 
+    which Operations Manager 2007 cmdlets have an equivalent Operations 
+    Manager 2012 cmdlet ("renamed" cmdlets), and Operations Manager 2007
+    cmdlets that have no Operations Manager 2012 equivalent ("deprecated" 
+    cmdlets). 
+
+    ------------------------------------------------------------------------
+    OPERATIONS MANAGER 2012 MODULE NAME
+    ------------------------------------------------------------------------
+    
+    Operations Manager 2007 snap-in 
+        Microsoft.EnterpriseManagement.OperationsManager.Client
+
+    Operations Manager 2012 module
+        OperationsManager
+
+    ------------------------------------------------------------------------
+    NEW OPERATIONS MANAGER 2012 CMDLETS
+    ------------------------------------------------------------------------
+    Add-SCOMADAgentAssignment
+    Add-SCOMAlertResolutionState
+    Add-SCOMConnector
+    Add-SCOMNotificationChannel
+    Add-SCOMNotificationSubscriber
+    Add-SCOMNotificationSubscription
+    Add-SCOMRunAsAccount
+    Add-SCOMRunAsProfile
+    Add-SCOMSubscriberSchedule
+    Add-SCOMUserRole
+    Clear-SCOMSubscriberSchedule
+    Disable-SCOMAgentProxy
+    Disable-SCOMDiscovery
+    Disable-SCOMMonitor
+    Disable-SCOMOperationalDataReporting
+    Enable-SCOMAgentProxy
+    Enable-SCOMDiscovery
+    Enable-SCOMMonitor
+    Enable-SCOMOperationalDataReporting
+    Exit-SCOMCEIP
+    Export-SCOMEffectiveMonitoringConfiguration
+    Get-SCOMAccessLicense
+    Get-SCOMADAgentAssignment
+    Get-SCOMAgentApprovalSetting
+    Get-SCOMAlertResolutionSetting
+    Get-SCOMAlertResolutionState
+    Get-SCOMDatabaseGroomingSetting
+    Get-SCOMDataWarehouseSetting
+    Get-SCOMErrorReportingSetting
+    Get-SCOMHeartbeatSetting
+    Get-SCOMLicense
+    Get-SCOMLocation
+    Get-SCOMManagementGroup
+    Get-SCOMReportingSetting 
+    Get-SCOMResourcePool
+    Get-SCOMRMSEmulator
+    Get-SCOMRunAsDistribution
+    Get-SCOMRunAsProfile
+    Get-SCOMWebAddressSetting
+    Join-SCOMCEIP
+    New-SCOMLocation   
+    New-SCOMResourcePool
+    Remove-SCOMADAgentAssignment
+    Remove-SCOMAlertResolutionState
+    Remove-SCOMConnector
+    Remove-SCOMLocation
+    Remove-SCOMNotificationChannel
+    Remove-SCOMNotificationSubscriber
+    Remove-SCOMNotificationSubscription
+    Remove-SCOMResourcePool
+    Remove-SCOMRMSEmulator
+    Remove-SCOMRunAsAccount
+    Remove-SCOMRunAsProfile
+    Remove-SCOMSubscriberSchedule
+    Repair-SCOMAgent
+    Set-SCOMAgentApprovalSetting
+    Set-SCOMAlertResolutionSetting
+    Set-SCOMDatabaseGroomingSetting
+    Set-SCOMDataWarehouseSetting
+    Set-SCOMErrorReportingSetting
+    Set-SCOMHeartbeatSetting
+    Set-SCOMLicense
+    Set-SCOMLocation   
+    Set-SCOMMaintenanceMode
+    Set-SCOMReportingSetting
+    Set-SCOMResourcePool
+    Set-SCOMRMSEmulator
+    Set-SCOMRunAsDistribution
+    Set-SCOMRunAsProfile   
+    Set-SCOMWebAddressSetting
+    Test-SCOMCEIP
+    Test-SCOMOperationalDataReporting
+    Update-SCOMADAgentAssignment
+    Update-SCOMLocation
+    Update-SCOMRunAsAccount
+    Write-SCOMCommand
+    
+    ------------------------------------------------------------------------
+    RENAMED CMDLETS
+    ------------------------------------------------------------------------
+
+    Operations Manager 2007 Name        Operations Manager 2012 Name
+    ----------------------------        ----------------------------  
+    Add-ConnectorToTier                 Add-SCOMTierConnector
+    Add-RemotelyManagedComputer         Add-SCOMAgentlessManagedComputer    
+    Add-UserToUserRole                  Set-SCOMUserRole    
+    Approve-AgentPendingAction          Approve-SCOMPendingManagement    
+    Disable-NotificationSubscription    Disable-SCOMNotificationSubscription         
+    Disable-Rule                        Disable-SCOMRule          
+    Enable-NotificationSubscription     Enable-SCOMNotificationSubscription       
+    Enable-Rule                         Enable-SCOMRule           
+    Export-ManagementPack               Export-SCOMManagementPack    
+    Get-Agent                           Get-SCOMAgent
+    Get-AgentPendingAction              Get-SCOMPendingManagement     
+    Get-Alert                           Get-SCOMAlert 
+    Get-AlertHistory                    Get-SCOMAlertHistory 
+    Get-Connector                       Get-SCOMConnector 
+    Get-DefaultSetting                  Get-SCOM<SettingName>Setting
+    Get-Diagnostic                      Get-SCOMDiagnostic  
+    Get-Discovery                       Get-SCOMDiscovery 
+    Get-Event                           Get-SCOMEvent
+    Get-FailoverManagementServer        Get-SCOMParentManagementServer
+    Get-GatewayManagementServer         Get-SCOMGatewayManagementServer     
+    Get-MaintenanceWindow               Get-SCOMMaintenanceMode       
+    Get-ManagementGroupConnection       Get-SCOMManagementGroupConnection        
+    Get-ManagementPack                  Get-SCOMManagementPack 
+    Get-ManagementServer                Get-SCOMManagementServer      
+    Get-Monitor                         Get-SCOMMonitor
+    Get-MonitorHierarchy                Get-SCOMMonitor      
+    Get-MonitoringClass                 Get-SCOMClass 
+    Get-MonitoringObject                Get-SCOMClassInstance      
+    Get-MonitoringObjectGroup           Get-SCOMGroup     
+    Get-NotificationAction              Get-SCOMNotificationChannel    
+    Get-NotificationEndpoint            Get-SCOMNotificationChannel     
+    Get-NotificationRecipient           Get-SCOMNotificationSubscriber    
+    Get-NotificationSubscription        Get-SCOMNotificationSubscription       
+    Get-Override                        Get-SCOMOverride  
+    Get-OperationsManagerCommand        Get-SCOMCommand
+    Get-PrimaryManagementServer         Get-SCOMParentManagementServer
+    Get-Recovery                        Get-SCOMRecovery      
+    Get-RelationshipClass               Get-SCOMRelationship      
+    Get-RelationshipObject              Get-SCOMRelationshipInstance        
+    Get-RemotelyManagedComputer         Get-SCOMAgentlessManagedComputer    
+    Get-ResultantCategoryOverride       Get-SCOMOverrideResult        
+    Get-ResultantRuleOverride           Get-SCOMOverrideResult     
+    Get-ResultantUnitMonitorOverride    Get-SCOMOverrideResult        
+    Get-RootManagementServer            Get-SCOMRMSEmulator
+    Get-Rule                            Get-SCOMRule
+    Get-RunAsAccount                    Get-SCOMRunAsAccount 
+    Get-Task                            Get-SCOMTask
+    Get-TaskResult                      Get-SCOMTaskResult   
+    Get-UserRole                        Get-SCOMUserRole      
+    Install-Agent                       Install-SCOMAgent 
+    Install-AgentByName                 Install-SCOMAgent
+    Install-ManagementPack              Import-SCOMManagementPack    
+    New-LdapQueryDiscoveryCriteria      Install-SCOMAgent    
+    New-MaintenanceWindow               Start-SCOMMaintenanceMode     
+    New-ManagementGroupConnection       New-SCOMManagementGroupConnection        
+    New-Tier                            Add-SCOMTieredManagementGroup
+    New-WindowsDiscoveryConfiguration   Install-SCOMAgent    
+    Reject-AgentPendingAction           Deny-SCOMPendingManagement    
+    Remove-ConnectorFromTier            Remove-SCOMTierConnector
+    Remove-DisabledMonitoringObject     Remove-SCOMDisabledClassInstance       
+    Remove-ManagementGroupConnection    Remove-SCOMManagementGroupConnection        
+    Remove-RemotelyManagedComputer      Remove-SCOMAgentlessManagedComputer       
+    Remove-Tier                         Remove-SCOMTieredManagementGroup
+    Resolve-Alert                       Set-SCOMAlert  
+    Set-AlertDestination                Set-SCOMAlert     
+    Set-DefaultSetting                  Set-SCOM<SettingName>Setting
+    Set-ManagementServer                Set-SCOMParentManagementServer
+    Set-ProxyAgent                      Set-SCOMAgentlessManagedComputer 
+    Start-Discovery                     Install-SCOMAgent
+    Start-Task                          Start-SCOMTask
+    Uninstall-Agent                     Uninstall-SCOMAgent  
+    Uninstall-ManagementPack            Remove-SCOMManagementPack    
+
+
+    ------------------------------------------------------------------------
+    DEPRECATED OPERATIONS MANAGER 2007 CMDLETS
+    ------------------------------------------------------------------------
+
+    Get-AlertDestination
+    New-CustomMonitoringObject
+    New-DeviceDiscoveryConfiguration
+    Get-MonitoringClassProperty
+    Get-MonitoringObjectPath
+    Get-MonitoringObjectProperty
+    New-MonitoringPropertyValuePair
+    Get-PerformanceCounter
+    Get-PerformanceCounterValue
+    Add-RemotelyManagedDevice
+    Get-RemotelyManagedDevice
+    Remove-RemotelyManagedDevice
+    Get-State
+    
+
+SEE ALSO
+    about_OpsMgr_WhatsNew

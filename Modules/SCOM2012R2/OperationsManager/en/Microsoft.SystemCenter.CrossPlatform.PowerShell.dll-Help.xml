@@ -1,0 +1,2532 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<helpItems xmlns="http://msh" schema="maml"><!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Get-SCXAgent
+		</command:name>
+		<maml:description>
+			<maml:para>Gets a list of managed UNIX and Linux computers in a management group.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Get</command:verb>
+		<command:noun>SCXAgent</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Get-SCXAgent cmdlet retrieves the managed UNIX/Linux computers that match the provided selection criteria.  If no selection criteria are specified, all managed UNIX/Linux computers in the management group are returned.
+
+Results are output as an array of managed UNIX/Linux computer objects.
+</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Get-SCXAgent</maml:name>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="1">
+				<maml:name>Name</maml:name>
+				<maml:description>
+					<maml:para>Specifies a list of fully-qualified domain names for one or more managed UNIX or Linux computers.   Returns only the managed computers that match the Name property.  
+
+You can include wildcards, in which case all computers matching the wildcard are returned.  For information about using wildcards, type Get-Help About_Wildcards.  
+
+This parameter is accepted from the pipeline.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+		<command:syntaxItem>
+			<maml:name>Get-SCXAgent</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>ID</maml:name>
+				<maml:description>
+					<maml:para>Specifies the ID of a managed UNIX or Linux computer object. Returns only the only managed computers with ID properties that match this value. This parameter is accepted from the pipeline.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">Guid[]</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+		<command:syntaxItem>
+			<maml:name>Get-SCXAgent</maml:name>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>ResourcePool</maml:name>
+				<maml:description>
+					<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool.
+
+For information about how to get a Resource Pool object, type Get-Help Get-SCOMResourcePool.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>ID</maml:name>
+			<maml:description>
+				<maml:para>Specifies the ID of a managed UNIX or Linux computer object. Returns only the only managed computers with ID properties that match this value. This parameter is accepted from the pipeline.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">Guid[]</command:parameterValue>
+			<dev:type>
+				<maml:name>Guid[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="1">
+			<maml:name>Name</maml:name>
+			<maml:description>
+				<maml:para>Specifies a list of fully-qualified domain names for one or more managed UNIX or Linux computers.   Returns only the managed computers that match the Name property.  
+
+You can include wildcards, in which case all computers matching the wildcard are returned.  For information about using wildcards, type Get-Help About_Wildcards.  
+
+This parameter is accepted from the pipeline.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			<dev:type>
+				<maml:name>string[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>ResourcePool</maml:name>
+			<maml:description>
+				<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool.
+
+For information about how to get a Resource Pool object, type Get-Help Get-SCOMResourcePool.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			<dev:type>
+				<maml:name>ManagementServicePool</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>Microsoft.Unix.Computer[]</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					Returns one or more Microsoft.Unix.Computer objects. 
+
+Type: Microsoft.Unix.Computer[]
+
+Description: A class that represents managed UNIX/Linux computers
+
+When Output: Output when managed UNIX/Linux computers matching the input criteria are found
+
+
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Returns all managed UNIX and Linux computers in the resource pool.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$myPool = Get-SCOMResourcePool -DisplayName &quot;pool01&quot;
+Get-SCXAgent -ResourcePool $myPool                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Returns all managed UNIX and Linux computers for a specified resource pool.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 3 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent -Name nx1.contoso.com,nx2.*,*.development.contoso.com                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Returns managed UNIX and Linux computers with names matching a provided list of strings.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 4 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+&quot;server1&quot;, &quot;server2&quot;, &quot;server3&quot; | Get-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Provides the Name parameter through the pipeline.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 5 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent -Name *development.contoso.com -ComputerName server1.contoso.com                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Connects to a resource pool with a temporary connection, using the current user's credentials, and returns only the managed computers that match the Name property. </maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212642</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Install-SCXAgent
+		</command:name>
+		<maml:description>
+			<maml:para>The Install-SCXAgent cmdlet installs the Operations Manager agent for discovered UNIX and Linux computers, signs the certificate for WS-Management communication, and registers the agent with Operations Manager for management. </maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Install</command:verb>
+		<command:noun>SCXAgent</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Install-SCXAgent cmdlet installs the Operations Manager agent for discovered UNIX/Linux computers, signs the certificate for WS-Management communication, and registers the agent with Operations Manager for management.  UNIX and Linux computers should be discovered with the Invoke-SCXDiscovery cmdlet and the output object of the Invoke-SCXDiscovery cmdlet provided as the DiscoveryResult input for the Install-SCXAgent cmdlet.  
+
+For information about discovering UNIX/Linux computers, type Get-Help Invoke-SCXDiscovery.
+
+The output of this cmdlet is an array of managed UNIX/Linux computer objects representing the target systems that were successfully installed.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Install-SCXAgent</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>DiscoveryResult</maml:name>
+				<maml:description>
+					<maml:para>Specifies the DiscoveryResult object to process for management agent installation, as returned by the Invoke-SCXDiscovery cmdlet.    
+
+For more information about discovering target systems, type Get-Help Invoke-SCXDiscovery.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">DiscoveryResult[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>DiscoveryResult</maml:name>
+			<maml:description>
+				<maml:para>Specifies the DiscoveryResult object to process for management agent installation, as returned by the Invoke-SCXDiscovery cmdlet.    
+
+For more information about discovering target systems, type Get-Help Invoke-SCXDiscovery.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">DiscoveryResult[]</command:parameterValue>
+			<dev:type>
+				<maml:name>DiscoveryResult[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>Microsoft.Unix.Computer[]</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					The output of the Install-SCXAgent is an array of managed UNIX/Linux computers, that were successfully installed.
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$WSCredential = Get-Credential userBob
+$SSHCredential=Get-SCXSSHCredential -UserName userBob -SSHKey c:\keys\foo.ppk -ElevationType sudo
+$MyPool = Get-SCOMResourcePool -DisplayName:&quot;pool01&quot;
+Invoke-SCXDiscovery -IPRange 192.168.1.50,192.168.1.75  -ResourcePool:$MyPool -WSManCredential $WSCredential -SSHCredential $SSHCredential | Install-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Invoke a discovery of UNIX and Linux computers within a range of IP Addresses, and install the management agent.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212643</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Invoke-SCXDiscovery
+		</command:name>
+		<maml:description>
+			<maml:para>The Invoke-SCXDiscovery cmdlet invokes the discovery operation for the specified configuration of UNIX and Linux computers.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Invoke</command:verb>
+		<command:noun>SCXDiscovery</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Invoke-SCXDiscovery cmdlet invokes the discovery operation for the specified configuration.  
+
+The operation uses an SSH credential object for privileged SSH installation actions and an optional PowerShell credential object for low-privileged WS-Management agent communication. If the agent has been manually installed on the target hosts, only the low-privileged WS-Management credential is required.
+
+The output of this cmdlet is an array of DiscoveryResult objects representing the discovery result for each target that discovery was attempted for.
+</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Invoke-SCXDiscovery</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>Name</maml:name>
+				<maml:description>
+					<maml:para>Specifies a list of valid hostnames to, FQDNs, or IP Addresses (separated by a comma) that will be used for discovery.  Either the IPRange or Name parameters must be specified.  This parameter is accepted from the pipeline.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ResourcePool</maml:name>
+				<maml:description>
+					<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool.
+
+For information about how to get a resource pool object, type Get-Help Get-SCOMResourcePool. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>WSMANCredential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a credential used for low-privileged agent communication through WS-Management. 
+
+Type a user name, such as &quot;User01&quot; or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.
+</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SSHCredential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a privileged SSH credential used to perform the agent installation actions.  If this parameter is not specified, the discovery will fail unless an agent has been manually installed on the target computer.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SshPort</maml:name>
+				<maml:description>
+					<maml:para>Specifies the port to use for SSH communication with the host.   If not specified, the default value of 22 will be used.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Int16</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+		<command:syntaxItem>
+			<maml:name>Invoke-SCXDiscovery</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>IPRange</maml:name>
+				<maml:description>
+					<maml:para>Specifies a range of IP Addresses that will be used for discovery.  The IPRange must contain two IP Addresses (e.g. 192.168.0.1,192.168.0.254).   Either the IPRange or Name parameters must be specified.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ResourcePool</maml:name>
+				<maml:description>
+					<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool.
+
+For information about how to get a resource pool object, type Get-Help Get-SCOMResourcePool. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>WSMANCredential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a credential used for low-privileged agent communication through WS-Management. 
+
+Type a user name, such as &quot;User01&quot; or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.
+</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SSHCredential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a privileged SSH credential used to perform the agent installation actions.  If this parameter is not specified, the discovery will fail unless an agent has been manually installed on the target computer.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SshPort</maml:name>
+				<maml:description>
+					<maml:para>Specifies the port to use for SSH communication with the host.   If not specified, the default value of 22 will be used.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">Int16</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.
+</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>IPRange</maml:name>
+			<maml:description>
+				<maml:para>Specifies a range of IP Addresses that will be used for discovery.  The IPRange must contain two IP Addresses (e.g. 192.168.0.1,192.168.0.254).   Either the IPRange or Name parameters must be specified.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			<dev:type>
+				<maml:name>string[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>Name</maml:name>
+			<maml:description>
+				<maml:para>Specifies a list of valid hostnames to, FQDNs, or IP Addresses (separated by a comma) that will be used for discovery.  Either the IPRange or Name parameters must be specified.  This parameter is accepted from the pipeline.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">string[]</command:parameterValue>
+			<dev:type>
+				<maml:name>string[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ResourcePool</maml:name>
+			<maml:description>
+				<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool.
+
+For information about how to get a resource pool object, type Get-Help Get-SCOMResourcePool. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			<dev:type>
+				<maml:name>ManagementServicePool</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SSHCredential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a privileged SSH credential used to perform the agent installation actions.  If this parameter is not specified, the discovery will fail unless an agent has been manually installed on the target computer.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			<dev:type>
+				<maml:name>CredentialSet</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SshPort</maml:name>
+			<maml:description>
+				<maml:para>Specifies the port to use for SSH communication with the host.   If not specified, the default value of 22 will be used.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">Int16</command:parameterValue>
+			<dev:type>
+				<maml:name>Int16</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>WSMANCredential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a credential used for low-privileged agent communication through WS-Management. 
+
+Type a user name, such as &quot;User01&quot; or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>DiscoveryResult</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$WSCredential = Get-Credential userBob
+$SSHCredential=Get-SCXSSHCredential -UserName userBob -SSHKey c:\keys\mykey.ppk -ElevationType sudo
+$MyPool = Get-SCOMResourcePool &quot;pool01&quot;
+Invoke-SCXDiscovery -IPRange 192.168.1.50,192.168.1.75  -ResourcePool $MyPool -WSManCredential $WSCredential -SSHCredential $SSHCredential                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Discovers UNIX and Linux computers within a range of IP addresses.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$WSCredential = Get-Credential userBob
+$SSHCredential=Get-SCXSSHCredential -UserName userBob -SSHKey c:\keys\userBob.ppk -ElevationType sudo
+$MyPool = Get-SCOMResourcePool -DisplayName:&quot;pool01&quot;
+Invoke-SCXDiscovery -Name &quot;nx1.contoso.com,nx2.contoso.com,nx3.contoso.com&quot; -SSHPort 8022  -ResourcePool $MyPool -WSManCredential $WSCredential -SSHCredential $SSHCredential                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Discovers UNIX and Linux computers by name using a resource pool and specifying a non-standard SSH port.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 3 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$MyPool = Get-SCOMResourcePool &quot;RP1&quot;
+Invoke-SCXDiscovery -Name &quot;nx1.contoso.com,nx2.contoso.com,nx3.contoso.com&quot; -ResourcePool $MyPool -WSManCredential userBob                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Discovers UNIX and Linux computers by name where the management agent has already been installed.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212645</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Remove-SCXAgent
+		</command:name>
+		<maml:description>
+			<maml:para>The Remove-SCXAgent cmdlet removes the target managed UNIX and Linux computers from the management group. Managed UNIX and Linux computers are passed to the Remove-SCXAgent cmdlet as an array of UNIX and Linux computer objects. 
+
+
+</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Remove</command:verb>
+		<command:noun>SCXAgent</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Remove-SCXAgent cmdlet removes the target managed UNIX/Linux computers from the management group.  Managed UNIX/Linux computers are passed to the Remove-SCXAgent cmdlet as an array of UNIX/Linux computer objects.
+
+For information about retrieving managed UNIX/Linux computers, type Get-Help Get-SCXAgent.
+
+This cmdlet does not return any output.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Remove-SCXAgent</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>Agent</maml:name>
+				<maml:description>
+					<maml:para>Specifies one or more managed UNIX or Linux computer objects.  This parameter is accepted from the pipeline.
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>Agent</maml:name>
+			<maml:description>
+				<maml:para>Specifies one or more managed UNIX or Linux computer objects.  This parameter is accepted from the pipeline.
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			<dev:type>
+				<maml:name>Computer[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>&lt;void&gt;</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					There is no failure case for Remove-SCXAgent.
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$myAgents = Get-SCXAgent -Name scxserver1.contoso.com,scxserver2*,*.development.contoso.com 
+Remove-SCXAgent -Agent $myAgents                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Gets managed UNIX and Linux computers with names matching the provided input, and removes them from management.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent -Name scxserver1.contoso.com,scxserver2*,*.development.contoso.com | Remove-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#gets managed UNIX and Linux computers with names matching provided input, and removes them from management using a pipeline operation.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212646</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Set-SCXResourcePool
+		</command:name>
+		<maml:description>
+			<maml:para>Changes the managing Resource Pool for the specified managed UNIX or Linux computers.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Set</command:verb>
+		<command:noun>SCXResourcePool</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Set-SCXResourcePool cmdlet changes the managing Resource Pool for the specified target managed UNIX or Linux computers.  If the specified UNIX or Linux computer is already assigned to the Resource Pool, no action will be performed.   
+
+The output of this cmdlet is an array of managed UNIX or Linux computer objects representing the target systems that were successfully set to a new Resource Pool.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Set-SCXResourcePool</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>Agent</maml:name>
+				<maml:description>
+					<maml:para>Specifies one or more managed UNIX/Linux computer objects.   This parameter is accepted from the pipeline.
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ResourcePool</maml:name>
+				<maml:description>
+					<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool. 
+
+For information about how to get a resource pool object, type Get-Help Get-SCOMResourcePool. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).
+</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>Agent</maml:name>
+			<maml:description>
+				<maml:para>Specifies one or more managed UNIX/Linux computer objects.   This parameter is accepted from the pipeline.
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			<dev:type>
+				<maml:name>Computer[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).
+</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ResourcePool</maml:name>
+			<maml:description>
+				<maml:para>Specifies a resource pool of servers, one of which is assigned to be the current management server and the other serving as back-up management servers. This parameter requires a resource pool object and returns only the managed computers in that resource pool. 
+
+For information about how to get a resource pool object, type Get-Help Get-SCOMResourcePool. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">ManagementServicePool</command:parameterValue>
+			<dev:type>
+				<maml:name>ManagementServicePool</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>Microsoft.Unix.Computer[]</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					The Set-SCXManagementServer cmdlet outputs an array of managed UNIX/Linux computer objects with an object for each agent successfully migrated.   Managed UNIX/Linux computers that are not successfully migrated to a new Resource Pool will not be output.
+
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$MyPool = Get-SCOMResourcePool -DisplayName &quot;Pool 1&quot;
+Get-SCXAgent -Name scxserver1.contoso.com | Set-SCXResourcePool -ResourcePool $MyPool                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Moves a single agent to the Resource Pool named: &quot;Pool 1&quot;.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$MyPool1 = Get-SCOMResourcePool -DisplayName &quot;Pool 1&quot;
+$MyPool2 = Get-SCOMResourcePool -DisplayName &quot;Pool 2&quot;
+$MyAgents = Get-SCXAgent -ResourcePool $MyPool1 
+Set-SCXResourcePool -Agent $MyAgents -ResourcePool $MyPool2                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Moves all UNIX and Linux agents from &quot;Pool 1&quot; to &quot;Pool 2&quot;.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212647</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Uninstall-SCXAgent
+		</command:name>
+		<maml:description>
+			<maml:para>Uninstalls the management agent on the specified managed UNIX or Linux computers. </maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Uninstall</command:verb>
+		<command:noun>SCXAgent</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Uninstall-SCXAgent cmdlet uninstalls the management agent on the specified UNIX/Linux computers. 
+
+The required Agent parameter specifies the target managed UNIX or Linux computers to uninstall and requires a UNIX or Linux computer object. For information about retrieving managed UNIX or Linux computers, type Get-Help Get-SCXAgent. An optional SSHCredential parameter can be specified to identify the privileged credential used for uninstallation of the management agent. If the SSHCredential is not specified, the cmdlet will attempt to use the defined privileged Run As account for the agent. 
+
+This cmdlet does not return any output.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Uninstall-SCXAgent</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>Agent</maml:name>
+				<maml:description>
+					<maml:para>Specifies one or more managed UNIX or Linux computer objects.  This parameter is accepted from the pipeline.  
+
+For information about how to get a managed UNIX or Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SshCredential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a privileged SSH credential used to perform the agent maintenance actions.  If this parameter is not specified, the cmdlet will attempt to use the defined agent maintenance Run As account for the agent.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>Agent</maml:name>
+			<maml:description>
+				<maml:para>Specifies one or more managed UNIX or Linux computer objects.  This parameter is accepted from the pipeline.  
+
+For information about how to get a managed UNIX or Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			<dev:type>
+				<maml:name>Computer[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SshCredential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a privileged SSH credential used to perform the agent maintenance actions.  If this parameter is not specified, the cmdlet will attempt to use the defined agent maintenance Run As account for the agent.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			<dev:type>
+				<maml:name>CredentialSet</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>&lt;void&gt;</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					The output is a list of results, each representing the uninstall status for a computer:
+
+hostname, uninstall status, description
+
+*Description includes the details of why uninstall failed.
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$MyAgent = Get-SCXAgent -Name nx1.contoso.com
+$SSHCredential=Get-SCXSSHCredential -UserName userBob -SSHKey c:\keys\key.ppk -ElevationType sudo
+Uninstall-SCXAgent -SSHCredential $SSHCredential -Agent $MyAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Uninstalls the agent using a specified SSH credential. </maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent -Name nx1.contoso.com | Uninstall-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Uninstalls the agent using the defined Run As account associated with the agent.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212648</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Update-SCXAgent
+		</command:name>
+		<maml:description>
+			<maml:para>Upgrades the management agent on the specified UNIX/Linux computers to the latest version available. </maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Update</command:verb>
+		<command:noun>SCXAgent</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Update-SCXAgent cmdlet updates the agent on the specified computers to the latest version available.  If the latest available version of the management agent is already installed a target computer, no action will be taken.  
+
+The required Agent parameter specifies the target managed UNIX/Linux computers to uninstall and requires a UNIX/Linux computer object.  For information about retrieving managed UNIX/Linux computers, type Get-Help Get-SCXAgent.  This cmdlet accepts SshCredential and WSMANCredential input parameters.  The supplied SSHCredential is used for privileged agent update actions while the supplied WSMAN credential is used for low-privileged agent communication.  If the SshCredential parameter is not provided, the cmdlet will attempt to use the defined agent maintenance Run As account associated with the target computer.  If the WSManCredential parameter is not provided, the cmdlet will attempt to use the defined action account Run As account associated with the target computer.
+
+The output of this cmdlet is an array of managed UNIX or Linux computer objects representing the target systems that were successfully updated.</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Update-SCXAgent</maml:name>
+			<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+				<maml:name>Agent</maml:name>
+				<maml:description>
+					<maml:para>Specifies one or more managed UNIX/Linux computer objects.  This parameter is accepted from the pipeline.  
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ComputerName</maml:name>
+				<maml:description>
+					<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Credential</maml:name>
+				<maml:description>
+					<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="true" variableLength="true" globbing="false" pipelineInput="true (ByValue)" position="named">
+			<maml:name>Agent</maml:name>
+			<maml:description>
+				<maml:para>Specifies one or more managed UNIX/Linux computer objects.  This parameter is accepted from the pipeline.  
+
+For information about how to get a managed UNIX/Linux computer object, type Get-Help Get-SCXAgent.  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="true">Computer[]</command:parameterValue>
+			<dev:type>
+				<maml:name>Computer[]</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ComputerName</maml:name>
+			<maml:description>
+				<maml:para>Specifies a computer to establish a connection with. The computer must be running the Operations Manager Data Access service.
+
+Valid formats include a NetBIOS name, an IP address, or a fully qualified domain name. To specify the local computer, type the computer name, &quot;localhost&quot;, or a dot (.).</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Credential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a user account under which the management group connection will run. The default is the current user.
+
+Type a user name, such as &quot;User01&quot;, &quot;Domain01\User01&quot;, or &quot;User@Domain.com&quot;, or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SshCredential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a privileged SSH credential used to perform the agent update actions.   If this parameter is not specified, the cmdlet will attempt to use the defined agent maintenance Run As account for the agent.
+
+For information about how to get an SSH credential object, type Get-Help Get-SCXSSHCredential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">CredentialSet</command:parameterValue>
+			<dev:type>
+				<maml:name>CredentialSet</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>WSMANCredential</maml:name>
+			<maml:description>
+				<maml:para>Specifies a credential used for low-privileged agent communication through WSMan.  This cmdlet uses this credential to verify agent availability.
+
+Type a user name, such as &quot;User01&quot; or enter a PSCredential object, such as one returned by the Get-Credential cmdlet. When you type a user name, you will be prompted for a password. For more information, type Get-Help Get-Credential.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">PSCredential</command:parameterValue>
+			<dev:type>
+				<maml:name>PSCredential</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>Confirm</maml:name>
+    			<maml:description>
+				<maml:para>Prompts you for confirmation before executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+			<command:parameter required="false" variableLength="true" globbing="false" pipelineInput="false" position="named">
+   			 <maml:name>WhatIf</maml:name>
+    			<maml:description>
+				<maml:para>Describes what would happen if you executed the command without actually executing the command.</maml:para>
+    			</maml:description>
+    			<command:parameterValue required="false" variableLength="false">SwitchParameter</command:parameterValue>	
+				<dev:type>
+  				<maml:name>SwitchParameter</maml:name> 
+					<maml:uri /> 
+					</dev:type>
+ 			<dev:defaultValue /> 
+			</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>Microsoft.Unix.Computer[]</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					The output of this cmdlet is a collection of upgrade result, each representing the upgrade status for a computer.  Each result must contain the following information:
+
+hostname, os, old Agent version, new Agent version, upgrade status, description
+
+*Description includes the details of why upgrade failed. 
+
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          This command takes in a collection of host names in enumerated fashion.  It collects all host names and process the entire collection in parallel at the end of the pipeline. 
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+$MyAgent = Get-SCXAgent -Name nx1.contoso.com
+$WSCredential = Get-Credential userBob
+$SSHCredential=Get-SCXSSHCredential -UserName userBob -SSHKey c:\keys\key.ppk -ElevationType sudo
+Update-SCXAgent -SSHCredential $SSHCredential -WSManCredential $WSCredential -Agent $MyAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Updates management agent using a specified SSH credential and WSMan credential.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXAgent -Name nx1.contoso.com | Update-SCXAgent                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Updates management agent using the defined Run As accounts.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212650</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+<!-- v 1.3.0.36 -->
+<command:command xmlns:maml="http://schemas.microsoft.com/maml/2004/10" xmlns:command="http://schemas.microsoft.com/maml/dev/command/2004/10" xmlns:dev="http://schemas.microsoft.com/maml/dev/2004/10">
+	<command:details>
+		<command:name>
+                   Get-SCXSSHCredential
+		</command:name>
+		<maml:description>
+			<maml:para>Creates a privileged credential, using the Secure Shell (SSH) protocol, for management operations on UNIX and Linux computers.</maml:para>
+		</maml:description>
+		<maml:copyright>
+			<maml:para></maml:para>
+		</maml:copyright>
+		<command:verb>Get</command:verb>
+		<command:noun>SCXSSHCredential</command:noun>
+		<dev:version></dev:version>
+	</command:details>
+	<maml:description>
+		<maml:para>The Get-SCXSSHCredential cmdlet creates a credential for use in privileged UNIX/Linux SSH agent management operations.
+</maml:para>
+	</maml:description>
+	<!-- Cmdlet syntax section-->
+	<command:syntax>
+		<command:syntaxItem>
+			<maml:name>Get-SCXSSHCredential</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1">
+				<maml:name>UserName</maml:name>
+				<maml:description>
+					<maml:para>The user name for an SSH connection. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>Password</maml:name>
+				<maml:description>
+					<maml:para>The password for an SSH connection.  This parameter is required unless an SSHKey is specified.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ElevationType</maml:name>
+				<maml:description>
+					<maml:para>The elevation method, either &quot;su&quot; or &quot;sudo&quot;, that elevates the supplied credential to a privileged account on the UNIX or Linux computer. If left unspecified, the cmdlet assumes the credential used to create the SSH connection is privileged. If ElevationType is &quot;su&quot;, a root password must be provided for the SuPassword parameter.
+
+</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SuPassword</maml:name>
+				<maml:description>
+					<maml:para>Password for elevating to a privileged account using &quot;su.&quot;  The SuPassword value must be the password to the root account.  Mandatory, if ElevationType is &quot;su.&quot;  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SuppressWarning</maml:name>
+				<maml:description>
+					<maml:para>When SuppressWarning is specified, the security warning will not be displayed when creating an SSH credential.   When creating a credential for connection to a remote system with SSH, the Get-SCXSSHCredential will prompt with a warning about the risk of sending login information to a remote system.  This parameter can be used to suppress the warning when creating the credential object.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+		<command:syntaxItem>
+			<maml:name>Get-SCXSSHCredential</maml:name>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1">
+				<maml:name>UserName</maml:name>
+				<maml:description>
+					<maml:para>The user name for an SSH connection. </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SSHKey</maml:name>
+				<maml:description>
+					<maml:para>The file name, including its path, of an SSH key. The SSH key file must be in PuTTY key format.  This parameter is required unless a Password is specified.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>ElevationType</maml:name>
+				<maml:description>
+					<maml:para>The elevation method, either &quot;su&quot; or &quot;sudo&quot;, that elevates the supplied credential to a privileged account on the UNIX or Linux computer. If left unspecified, the cmdlet assumes the credential used to create the SSH connection is privileged. If ElevationType is &quot;su&quot;, a root password must be provided for the SuPassword parameter.
+
+</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>KeyPassphrase</maml:name>
+				<maml:description>
+					<maml:para>The pass phrase for the specified SSH key.   This parameter is optional, but must be provided if the specified SSH Key requires a pass phrase.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SuPassword</maml:name>
+				<maml:description>
+					<maml:para>Password for elevating to a privileged account using &quot;su.&quot;  The SuPassword value must be the password to the root account.  Mandatory, if ElevationType is &quot;su.&quot;  </maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			</command:parameter>
+			<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+				<maml:name>SuppressWarning</maml:name>
+				<maml:description>
+					<maml:para>When SuppressWarning is specified, the security warning will not be displayed when creating an SSH credential.   When creating a credential for connection to a remote system with SSH, the Get-SCXSSHCredential will prompt with a warning about the risk of sending login information to a remote system.  This parameter can be used to suppress the warning when creating the credential object.</maml:para>
+				</maml:description>
+				<command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+			</command:parameter>
+		</command:syntaxItem>
+	</command:syntax>
+	<!-- Cmdlet parameter section  -->
+	<command:parameters>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>ElevationType</maml:name>
+			<maml:description>
+				<maml:para>The elevation method, either &quot;su&quot; or &quot;sudo&quot;, that elevates the supplied credential to a privileged account on the UNIX or Linux computer. If left unspecified, the cmdlet assumes the credential used to create the SSH connection is privileged. If ElevationType is &quot;su&quot;, a root password must be provided for the SuPassword parameter.
+
+</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>KeyPassphrase</maml:name>
+			<maml:description>
+				<maml:para>The pass phrase for the specified SSH key.   This parameter is optional, but must be provided if the specified SSH Key requires a pass phrase.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			<dev:type>
+				<maml:name>SecureString</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>Password</maml:name>
+			<maml:description>
+				<maml:para>The password for an SSH connection.  This parameter is required unless an SSHKey is specified.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			<dev:type>
+				<maml:name>SecureString</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SSHKey</maml:name>
+			<maml:description>
+				<maml:para>The file name, including its path, of an SSH key. The SSH key file must be in PuTTY key format.  This parameter is required unless a Password is specified.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SuPassword</maml:name>
+			<maml:description>
+				<maml:para>Password for elevating to a privileged account using &quot;su.&quot;  The SuPassword value must be the password to the root account.  Mandatory, if ElevationType is &quot;su.&quot;  </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">SecureString</command:parameterValue>
+			<dev:type>
+				<maml:name>SecureString</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="false" variableLength="false" globbing="false" pipelineInput="false" position="named">
+			<maml:name>SuppressWarning</maml:name>
+			<maml:description>
+				<maml:para>When SuppressWarning is specified, the security warning will not be displayed when creating an SSH credential.   When creating a credential for connection to a remote system with SSH, the Get-SCXSSHCredential will prompt with a warning about the risk of sending login information to a remote system.  This parameter can be used to suppress the warning when creating the credential object.</maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">switch</command:parameterValue>
+			<dev:type>
+				<maml:name>switch</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+		<command:parameter required="true" variableLength="false" globbing="false" pipelineInput="false" position="1">
+			<maml:name>UserName</maml:name>
+			<maml:description>
+				<maml:para>The user name for an SSH connection. </maml:para>
+								
+			</maml:description>
+			<command:parameterValue required="true" variableLength="false">string</command:parameterValue>
+			<dev:type>
+				<maml:name>string</maml:name>
+				<maml:uri/>
+			</dev:type>
+			<dev:defaultValue></dev:defaultValue>
+		</command:parameter>
+	</command:parameters>
+	<!-- Input - Output section-->
+	<command:inputTypes>
+		<command:inputType>
+			<dev:type>
+				<maml:name></maml:name>
+				<maml:uri/>
+				<maml:description />
+			</dev:type>
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description>
+		</command:inputType>
+	</command:inputTypes>
+	<command:returnValues>
+		<command:returnValue>
+			<dev:type>
+				<maml:name>Microsoft.Unix.SSHCredential</maml:name>
+				<maml:uri />
+				<maml:description />
+			</dev:type>   
+			<maml:description>
+				<maml:para>
+					<!-- description  -->
+					
+				</maml:para>
+			</maml:description> 
+		</command:returnValue>
+	</command:returnValues>
+	<!-- Error section-->
+	<command:terminatingErrors />
+	<command:nonTerminatingErrors />
+		<!-- Notes section  -->
+	<maml:alertSet>
+		<maml:title></maml:title>
+		<maml:alert>
+			<maml:para>
+                          
+                        </maml:para>
+		</maml:alert>
+		<maml:alert>
+			<maml:para></maml:para>
+		</maml:alert>
+	</maml:alertSet>
+	<!-- Example section  --> 
+	<command:examples>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 1 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName root 
+Password:  *************                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Creates a privileged SSH credential with a username and prompts for a password.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 2 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName joe -ElevationType su 
+Password:  *************
+Su Password: *************                        </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Creates a low privileged credential with a username and su elevation type. It then prompts for a password (for the low privileged account) and the su password (for the elevation).</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 3 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName joe -ElevationType sudo
+Password: *************                         </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Creates a credential with a low privileged account with a username and a sudo elevation type. It then prompts for a password (for the low privileged account). </maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 4 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName root -SSHKey c:\keys\admin.ppk
+Key Passphrase: *************                         </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Creates a privileged credential with a username and an SSH key. It then prompts for a pass phrase. If a pass phrase was not configured with the SSH key, just press Enter.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 5 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName joe -SSHKey c:\keys\userJoe.ppk -ElevationType su 
+Su Password: *************
+Key Passphrase:                         </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#creates a low privileged credential with a username, an SSH key, and a su elevation type. It then prompts for the su password and a key pass phrase.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+
+		<command:example>
+			<maml:title>
+				-------------------------- EXAMPLE 6 --------------------------
+			</maml:title> 
+			<maml:introduction>
+				<maml:para>C:\PS&gt;</maml:para>
+			</maml:introduction> 
+  			<dev:code>
+Get-SCXSSHCredential -UserName joe -SSHKey c:\keys\userJoe.ppk -ElevationType sudo 
+Key Passphrase:                         </dev:code>
+       			<dev:remarks>
+                                <maml:para>Description</maml:para>
+                                <maml:para>-----------</maml:para>
+  			        <maml:para>#Creates a low privileged credential with a username, an SSH key, and a sudo elevation type. It then prompts for a key pass phrase.</maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+	                        <maml:para></maml:para>
+  			</dev:remarks>
+			<command:commandLines>
+				<command:commandLine>
+					<command:commandText></command:commandText>
+				</command:commandLine>
+			</command:commandLines>
+		</command:example>
+	</command:examples>
+	<!-- Link section  -->
+	<maml:relatedLinks>
+		<maml:navigationLink>
+			<maml:linkText>Online version:</maml:linkText>
+			<maml:uri>http://go.microsoft.com/fwlink/?LinkID=212639</maml:uri>
+		</maml:navigationLink>
+	</maml:relatedLinks>
+</command:command>
+</helpItems>

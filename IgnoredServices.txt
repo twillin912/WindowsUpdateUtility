@@ -1,0 +1,11 @@
+sppsvc
+TrustedInstaller
+UI0Detect
+clr_optimization_v4.0.30319_32
+clr_optimization_v4.0.30319_64
+RemoteRegistry
+ShellHWDetection
+Sysmonlog
+macmnsvc
+MMCSS
+sppsvc

@@ -1,0 +1,168 @@
+TOPIC
+    about_OpsMgr_WhatsNew
+
+SHORT DESCRIPTION
+    Describes the new features that are included with the System Center
+    Operations Manager 2012 cmdlets.
+
+LONG DESCRIPTION
+    The Operations Manager 2012 cmdlets are provided in a module that is 
+    imported into the Operations Manager Shell. To start the Operations 
+    Manager Shell from the Windows user interface, click Start, All Programs,
+    System Center Operations Manager 2012, and then Operations Manager Shell. 
+    To manually import the OM10 module into a Windows PowerShell session, 
+    type "Import-Module OperationsManager" at the command prompt. 
+
+    After you have opened an Operations Manager Shell session or manually 
+    imported the module, you can run the individual cmdlets alone or
+    combine them into scripts to automate tasks.
+
+    The cmdlets in this module are only compatible with Operations Manager 
+    2012. You can recognize the Operations Manager 2012 cmdlets by the "SCOM" 
+    preceding the noun name. 
+
+    To work with the Operations Manager 2007 cmdlets, see "Using the
+    Deprecated Operations Manager 2007 Cmdlets" later in this topic.
+
+WINDOWS POWERSHELL 2.0 SUPPORT
+    Operations Manager 2012 adds support for Windows PowerShell 2.0, which 
+    includes new cmdlets, parameters, and features, including the following:
+
+      Remoting
+
+        You can run commands on one or several remote computers by using a
+        single command. You can run individual commands, or create a session
+        in which you can run a series of commands. 
+
+      Background Jobs
+
+        Background jobs are commands that run asynchronously, returning the
+        command prompt immediately, even if the command is still running. You
+        can use background jobs to run commands in the background so that you
+        can continue to use your session for other work while the command
+        runs. You can run a background job on a remote computer by using the
+        Invoke-Command cmdlet.
+
+      Script Debugger
+
+        You can use the cmdlet-based debugger to help you debug functions and
+        scripts. The debugger cmdlets allow you to set and manage breakpoints,
+        and let you display the call stack.
+
+    For more information about PowerShell 2.0, see 
+    about_Windows_PowerShell_2.0.
+
+
+CONNECTIONS
+    To use the Operations Manager 2012 cmdlets, you need to establish a
+    connection to an Operations Manager management group. There are two 
+    types of connections that you can establish: persistent and temporary. 
+    To establish a new, persistent, management group connection, use the 
+    New-SCOMManagementGroupConnection cmdlet. To establish a temporary 
+    connection, use the ComputerName and Credential parameters for 
+    the cmdlet.
+
+    For more information about connections in Operations Manager 2012, see 
+    about_OpsMgr_Connections.
+    
+
+NEW CMDLETS
+    Operations Manager 2012 provides a full set of new cmdlets. For 
+    information about how the Operations Manager 2007 cmdlets map to
+    the Operations Manager 2012 cmdlets, see about_OpsMgr_Cmdlet_Names. 
+
+    Following are some common tasks you might want to perform in Operations 
+    Manager with their associated cmdlets.
+
+      AGENTS
+
+        Task                                    Cmdlets
+        ----------------------------------      -------------------------------
+        Get a list of agents                    Get-SCOMAgent
+
+        Install or uninstall an agent           Install-SCOMAgent
+                                                Uninstall-SCOMAgent
+                                                Get-SCOMPendingManagement
+                                                Approve-SCOMPendingManagement
+                                                Deny-SCOMPendingManagement
+
+      ALERTS
+
+        Task                                    Cmdlets
+        ----------------------------------      -------------------------------
+        Get a list of alerts                    Get-SCOMAlert
+
+        Update or close multiple alerts         Set-SCOMAlert
+
+        Put a resource into or remove it        Get-SCOMMaintenanceMode
+          from maintenance mode                 Start-SCOMMaintenanceMode
+                                                Set-SCOMMaintenanceMode
+
+
+      MANAGEMENT PACKS
+
+        Task                                    Cmdlets
+        ----------------------------------      -------------------------------
+        Get a list of management packs          Get-SCOMManagementPack
+
+        Backup and remove management packs      Get-SCOMManagementPack -Recurse |`
+                                                Export-SCOMManagementPack |`
+                                                Remove-SCOMManagementPack -Confirm
+
+        Get objects in a management pack        Get-SCOMDiscovery
+                                                Get-SCOMRule
+                                                Get-SCOMMonitor
+                                                Get-SCOMGroup
+                                                Get-SCOMClass
+                                                Get-SCOMClassInstance
+                                                Get-SCOMRunAsProfile
+                                                Get-SCOMRunAsAccount
+
+        Enable or disable a workflow            Enable-SCOMDiscovery
+                                                Disable-SCOMDiscovery
+                                                Enable-SCOMMonitor
+                                                Disable-SCOMMonitor
+                                                Enable-SCOMRule
+                                                Disable-SCOMRule
+
+
+
+
+WORKING WITH THE MANAGEMENT GROUP OBJECT
+    Most objects returned by cmdlets in this module include properties and
+    methods from the Operations Manager Software Development Kit (SDK) 
+    (http://go.microsoft.com/fwlink/?LinkId=194656). To see what methods 
+    and properties are available on the objects returned by the cmdlets, 
+    use the Get-Member cmdlet. For example:    
+
+        Get-SCOMAlert | Get-Member
+
+    For more information about Get-Member, type "Get-Help Get-Member".
+
+    In the following example, the first command gets an agent object, and the 
+    second command returns the management group object for the agent object:
+
+        C:\PS> $Agent = Get-SCOMAgent -Name Server01
+        C:\PS> $Agent.ManagementGroup
+
+    NOTE:  The "ManagementGroup" property for an object provides programmatic 
+    access to the management group that the object was retrieved from, using
+    the Operations Manager SDK.  The Get-SCOMManagementGroup cmdlet can also
+    be used to obtain a management group object.
+
+
+USING THE DEPRECATED OPERATIONS MANAGER 2007 CMDLETS
+    The Operations Manager 2007 cmdlets are deprecated in Operations Manager 
+    2012 and will be removed in a future release. However, they are still 
+    available for use while migrating from Operations Manager 2007. To use 
+    the deprecated cmdlets, you must open a PowerShell session, load the 
+    snap-in, and then run the startup script:
+
+      C:\PS>Add-PSSnapIn Microsoft.EnterpriseManagement.OperationsManager.Client
+      C:\PS>cd "$env:Program Files\System Center Operations Manager 2012\Console"
+      c:\PS>.\Microsoft.EnterpriseManagement.OperationsManager.ClientShell.Startup.ps1
+
+SEE ALSO
+    about_OpsMgr_Cmdlet_Names
+    about_OpsMgr_Connections
+    about_OpsMgr_RunAsAccount

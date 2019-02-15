@@ -103,6 +103,9 @@
                                 <GridViewColumn x:Name = 'AvailableColumn' Width = '100' DisplayMemberBinding = '{Binding Path = Available}' Header='Available'/>
                                 <GridViewColumn x:Name = 'DownloadedColumn' Width = '100' DisplayMemberBinding = '{Binding Path = Downloaded}' Header='Downloaded' />
                                 <GridViewColumn x:Name = 'InstallErrorsColumn' Width = '100' DisplayMemberBinding = '{Binding Path = InstallErrors}' Header='Install Errors' />
+                                <GridViewColumn x:Name = 'SCOMMaintenanceEnd' Width = '150' DisplayMemberBinding = '{Binding Path = SCOMMaintenanceEnd}' Header='SCOM Maintenance End' />
+                                <GridViewColumn x:Name = 'AutoServiceStatus' Width = '150' DisplayMemberBinding = '{Binding Path = AutoServiceStatus}' Header='Auto Service Status' />
+                                <GridViewColumn x:Name = 'SpecialServiceStatus' Width = '150' DisplayMemberBinding = '{Binding Path = SpecialServiceStatus}' Header='Special Service Status' />
                                 <GridViewColumn x:Name = 'StatusColumn' Width = '365' DisplayMemberBinding = '{Binding Path = Status}' Header='Status'/>
                                 <GridViewColumn x:Name = 'RebootColumn' Width = '100' DisplayMemberBinding = '{Binding Path = RebootRequired}' Header='Reboot Required'/>
                                 <GridViewColumn x:Name = 'UpdatesStatusColumn' Width = '150' DisplayMemberBinding = '{Binding Path = UpdatesStatus}' Header='Updates Status'/>

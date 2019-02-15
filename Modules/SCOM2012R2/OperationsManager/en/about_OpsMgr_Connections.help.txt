@@ -1,0 +1,68 @@
+TOPIC
+    about_OpsMgr_Connections
+
+SHORT DESCRIPTION
+    Describes the types of management group connections that you can create 
+    when using the Operations Manager Shell.
+
+
+LONG DESCRIPTION
+    To use the System Center Operations Manager 2012 cmdlets, you need to 
+    establish a connection to an Operations Manager management group. There 
+    are two types of connections that you can establish: persistent and 
+    temporary. 
+
+    If you have not previously used the Operations Console, the first time 
+    you use the command shell you will be prompted for the name of a 
+    management server to connect to. If you have used either the Operations
+    Console or the command shell before, the command shell will attempt to
+    connect to the last management server to which it had successfully 
+    connected.
+
+PERSISTENT CONNECTIONS
+
+    To create a persistent management group connection, use the 
+    New-SCOMManagementGroupConnection cmdlet. You can establish multiple 
+    management group connections, but only one can be active at a time. 
+    
+    To set an active connection, use the Set-SCOMManagementGroupConnection cmdlet. 
+    You can also use Set-SCOMManagementGroupConnection to change which management
+    group connection is the active connection. After you have set an active
+    connection, all cmdlets that you run will use this connection by default.
+
+    To see which connection is the active connection, use the 
+    Get-SCOMManagementGroupConnection cmdlet. This cmdlet lists all established
+    management group connections and identifies the active connection.
+
+TEMPORARY CONNECTIONS
+
+    You can create a temporary connection to a management group that is not 
+    the active management group connection by using the ComputerName and 
+    Credential parameters for a cmdlet. If you do not specify credentials,
+    the user's security context is used. 
+
+OPENING THE OPERATIONS MANAGER SHELL FROM THE OPERATIONS CONSOLE
+
+    You can open the Operations Manager Shell from the Operations Console by 
+    using the following method: right-click an object in the user interface, 
+    click Open, and then click Operations Manager Shell.
+
+    When you use this method to open the command shell, the user interface 
+    passes the object's instance ID to the command shell as an argument.
+    After the command shell opens, it establishes a connection to the 
+    management server, and then and runs the following command:
+
+        Get-SCOMClassInstance -ID [Id of the selected object]
+
+    You will see the command written to the console before it is run. The 
+    instance returned from this cmdlet is stored in a variable named $context.
+    You can use the $context variable within that PowerShell session to take 
+    actions on the object.
+   
+
+SEE ALSO
+    New-SCOMManagementGroupConnection
+    Get-SCOMManagementGroupConnection
+    set-SCOMManagementGroupConnection
+    Remove-SCOMManagementGroupConnection
+    about_OpsMgr_WhatsNew
