@@ -129,7 +129,7 @@
                                 <MenuItem x:Name = 'SCOMEnterContext' Header = 'Enter SCOM MaintenanceMode'/>
                                 <MenuItem x:Name = 'SCOMExitContext' Header = 'Exit SCOM MaintenanceMode'/>
                                 <Separator />
-                                <MenuItem x:Name = 'ServicesCheckContext' Header = 'Check Automatic Services Status'/>
+                                <MenuItem x:Name = 'ServicesCheckContext' Header = 'Check Services Status'/>
                                 <MenuItem x:Name = 'ServicesStartContext' Header = 'Start Automatic Services'/>
                                 <MenuItem x:Name = 'ServicesHaltContext' Header = 'Stop Specific Services'/>
                                 <MenuItem x:Name = 'ServicesRunContext' Header = 'Start Specific Services'/>

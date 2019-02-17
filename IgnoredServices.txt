@@ -9,3 +9,5 @@ Sysmonlog
 macmnsvc
 MMCSS
 sppsvc
+gupdate
+Intel(R) TPM Provisioning Service
