@@ -36,6 +36,7 @@
             </MenuItem>
             <MenuItem x:Name = 'EditMenu' Header = '_Edit'>
                 <MenuItem x:Name = 'SelectAllMenu' Header = 'Select _All' ToolTip = 'Selects all rows.' InputGestureText ='Ctrl+A'/>
+                <MenuItem x:Name = 'UnSelectAllMenu' Header = 'UnSelect _All' ToolTip = 'UnSelects all rows.'/>
             </MenuItem>
             <MenuItem x:Name = 'ActionMenu' Header = '_Action'>
                 <MenuItem x:Name = 'ClearComputerListMenu' Header = 'Clear Computer List' ToolTip = 'Clears the computer list.'/>
@@ -120,6 +121,10 @@
                                 <MenuItem x:Name = 'RemoveComputerContext' Header = 'Remove Computer' InputGestureText ='Del'/>
                                 <Separator />
                                 <MenuItem x:Name = 'RemoteDesktopContext' Header = 'Remote Desktop'/>
+                                <MenuItem x:Name = 'CompmgmtContext' Header = 'Computer Management'/>
+                                <MenuItem x:Name = 'EventViewerContext' Header = 'Event Viewer'/>
+                                <MenuItem x:Name = 'ServicesContext' Header = 'Services.msc'/>
+                                <Separator />
                                 <MenuItem x:Name = 'CheckUpdatesContext' Header = 'Check For Updates'/>
                                 <MenuItem x:Name = 'DownloadUpdatesContext' Header = 'Download Updates'/>
                                 <MenuItem x:Name = 'InstallUpdatesContext' Header = 'Install Updates'/>

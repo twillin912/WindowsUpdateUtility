@@ -14,3 +14,5 @@ Net Driver HPZ12
 Pml Driver HPZ12
 vmwarelogbrowser
 gupdate
+WbioSrvc
+MapsBroker
