@@ -9,5 +9,8 @@ Sysmonlog
 macmnsvc
 MMCSS
 sppsvc
-gupdate
 Intel(R) TPM Provisioning Service
+Net Driver HPZ12
+Pml Driver HPZ12
+vmwarelogbrowser
+gupdate
