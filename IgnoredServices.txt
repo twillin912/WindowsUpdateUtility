@@ -1,18 +1,21 @@
-sppsvc
-TrustedInstaller
-UI0Detect
+cdpsvc
 clr_optimization_v4.0.30319_32
 clr_optimization_v4.0.30319_64
-RemoteRegistry
-ShellHWDetection
-Sysmonlog
-macmnsvc
-MMCSS
-sppsvc
+gupdate
 Intel(R) TPM Provisioning Service
+macmnsvc
+MapsBroker
+mfewc
+MMCSS
 Net Driver HPZ12
 Pml Driver HPZ12
+RemoteRegistry
+ShellHWDetection
+sppsvc
+sppsvc
+Sysmonlog
+TBS
+TrustedInstaller
+UI0Detect
 vmwarelogbrowser
-gupdate
 WbioSrvc
-MapsBroker

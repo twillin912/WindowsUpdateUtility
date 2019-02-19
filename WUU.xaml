@@ -39,6 +39,8 @@
                 <MenuItem x:Name = 'UnSelectAllMenu' Header = 'UnSelect _All' ToolTip = 'UnSelects all rows.'/>
             </MenuItem>
             <MenuItem x:Name = 'ActionMenu' Header = '_Action'>
+                <MenuItem x:Name = 'OpenWSUSMenu' Header = 'Open WSUS GUI' ToolTip = 'Opens WSUS GUI if is installed.'/>
+                <Separator />
                 <MenuItem x:Name = 'ClearComputerListMenu' Header = 'Clear Computer List' ToolTip = 'Clears the computer list.'/>
                 <MenuItem x:Name = 'OfflineHostsMenu' Header = 'Remove Offline Computers' ToolTip = 'Removes all offline hosts from Computer List'/>
                 <Separator />
@@ -120,10 +122,25 @@
                                 <MenuItem x:Name = 'AddFileContext' Header = 'Add Computers From File' InputGestureText ='Ctrl+O'/>
                                 <MenuItem x:Name = 'RemoveComputerContext' Header = 'Remove Computer' InputGestureText ='Del'/>
                                 <Separator />
-                                <MenuItem x:Name = 'RemoteDesktopContext' Header = 'Remote Desktop'/>
-                                <MenuItem x:Name = 'CompmgmtContext' Header = 'Computer Management'/>
-                                <MenuItem x:Name = 'EventViewerContext' Header = 'Event Viewer'/>
-                                <MenuItem x:Name = 'ServicesContext' Header = 'Services.msc'/>
+                                <MenuItem x:Name = 'ClientManagementMenu' Header = 'Client Management'>
+                                    <MenuItem x:Name = 'RemoteDesktopContext' Header = 'Remote Desktop'/>
+                                    <MenuItem x:Name = 'CompmgmtContext' Header = 'Computer Management'/>
+                                    <MenuItem x:Name = 'EventViewerContext' Header = 'Event Viewer'/>
+                                    <MenuItem x:Name = 'ServicesContext' Header = 'Services.msc'/>
+                                    <Separator />
+                                    <MenuItem x:Name = 'ShowUpdatesContext' Header = 'Show Available Updates'/>
+                                    <MenuItem x:Name = 'ShowInstalledContext' Header = 'Show Installed Updates'/>
+                                    <MenuItem x:Name = 'UpdateHistoryMenu' Header = 'Show Update History'/>
+                                    <MenuItem x:Name = 'ViewUpdateLogContext' Header = 'View Windows Update Log'/>
+                                    <MenuItem x:Name = 'WindowsUpdateServiceMenu' Header = 'Windows Update Service' >
+                                        <MenuItem x:Name = 'WUStopServiceMenu' Header = 'Stop Service' />
+                                        <MenuItem x:Name = 'WUStartServiceMenu' Header = 'Start Service' />
+                                        <MenuItem x:Name = 'WURestartServiceMenu' Header = 'Restart Service' />
+                                    </MenuItem>
+                                    <Separator />
+                                    <MenuItem x:Name = 'AllowFirewallContext' Header = 'Firewall: Allow remote Updates search'/>
+                                    <MenuItem x:Name = 'WUAUCLTContext' Header = 'WSUS Client Reset (WUAUCLT)'/>
+                                </MenuItem>
                                 <Separator />
                                 <MenuItem x:Name = 'CheckUpdatesContext' Header = 'Check For Updates'/>
                                 <MenuItem x:Name = 'DownloadUpdatesContext' Header = 'Download Updates'/>
@@ -138,16 +155,6 @@
                                 <MenuItem x:Name = 'ServicesStartContext' Header = 'Start Automatic Services'/>
                                 <MenuItem x:Name = 'ServicesHaltContext' Header = 'Stop Specific Services'/>
                                 <MenuItem x:Name = 'ServicesRunContext' Header = 'Start Specific Services'/>
-                                <Separator />
-                                <MenuItem x:Name = 'ShowUpdatesContext' Header = 'Show Available Updates'/>
-                                <MenuItem x:Name = 'ShowInstalledContext' Header = 'Show Installed Updates'/>
-                                <MenuItem x:Name = 'UpdateHistoryMenu' Header = 'Show Update History'/>
-                                <MenuItem x:Name = 'ViewUpdateLogContext' Header = 'View Windows Update Log'/>
-                                <MenuItem x:Name = 'WindowsUpdateServiceMenu' Header = 'Windows Update Service' >
-                                    <MenuItem x:Name = 'WUStopServiceMenu' Header = 'Stop Service' />
-                                    <MenuItem x:Name = 'WUStartServiceMenu' Header = 'Start Service' />
-                                    <MenuItem x:Name = 'WURestartServiceMenu' Header = 'Restart Service' />
-                                </MenuItem>
                             </ContextMenu>
                         </ListView.ContextMenu>
                     </ListView>
