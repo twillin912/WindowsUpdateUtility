@@ -12,7 +12,9 @@ I changed this GUI to fit the needs of my server admins to minimize the toolset 
 - download PSExec and put it in the WUU2 folder.
 - create SCOMServer.txt file that holds the name of your SCOM server
   - only on premise tested
-- 
+- TEST
+  - TEST
+    - TEST
 
 **Current status:**
 - Added Automatic services checks
