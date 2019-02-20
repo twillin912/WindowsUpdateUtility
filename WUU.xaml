@@ -138,7 +138,7 @@
                                         <MenuItem x:Name = 'WURestartServiceMenu' Header = 'Restart Service' />
                                     </MenuItem>
                                     <Separator />
-                                    <MenuItem x:Name = 'AllowFirewallContext' Header = 'Firewall: Allow remote Updates search'/>
+                                    <MenuItem x:Name = 'AllowFirewallContext' Header = 'WinRM: Allow Remote Management and Updates search'/>
                                     <MenuItem x:Name = 'WUAUCLTContext' Header = 'WSUS Client Reset (WUAUCLT)'/>
                                 </MenuItem>
                                 <Separator />
