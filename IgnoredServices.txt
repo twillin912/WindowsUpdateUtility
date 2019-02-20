@@ -15,6 +15,7 @@ sppsvc
 sppsvc
 Sysmonlog
 TBS
+tiledatamodelsvc
 TrustedInstaller
 UI0Detect
 vmwarelogbrowser

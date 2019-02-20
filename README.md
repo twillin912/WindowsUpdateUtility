@@ -32,7 +32,8 @@ I changed this GUI to fit the needs of my server admins to minimize the toolset 
 https://docs.microsoft.com/en-us/sysinternals/downloads/psexec
 
 
-Forked from https://github.com/HanSolo71/WUU2
+Forked from https://github.com/twillin912/WindowsUpdateUtility
+
 
 
 Original Project.
