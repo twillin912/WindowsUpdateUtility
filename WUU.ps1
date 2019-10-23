@@ -57,11 +57,11 @@ if ($host.Runspace.ApartmentState -ne 'STA') {
 
 #region Load required assemblies
 Write-Verbose 'Loading required assemblies.'
-Add-Type –assemblyName PresentationFramework
-Add-Type –assemblyName PresentationCore
-Add-Type –assemblyName WindowsBase
-Add-Type –assemblyName Microsoft.VisualBasic
-Add-Type –assemblyName System.Windows.Forms
+Add-Type -assemblyName PresentationFramework
+Add-Type -assemblyName PresentationCore
+Add-Type -assemblyName WindowsBase
+Add-Type -assemblyName Microsoft.VisualBasic
+Add-Type -assemblyName System.Windows.Forms
 #endregion Load required assemblies
 
 #region Load XAML
