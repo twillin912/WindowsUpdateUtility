@@ -523,6 +523,7 @@ $RestartComputer = {
             })
 
         #Restart and wait until remote COM can be connected
+        manage-bde.exe -protectors c: -disable -rc 1 -cn $Computer.Computer
         Restart-Computer $Computer.Computer -Force
         while (Test-Connection -Count 1 -ComputerName $Computer.Computer -Quiet) { Start-Sleep -Milliseconds 500 } #Wait for Computer to go offline
 
